@@ -1,6 +1,6 @@
 image:
   repository: changeunkim7/tf-model-api
-  tag: v2
+  tag: v3
   pullPolicy: Always
 replicaCount: 2
 service:

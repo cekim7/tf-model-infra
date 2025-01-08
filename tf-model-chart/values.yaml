@@ -1,0 +1,24 @@
+image:
+  repository: changeunkim7/tf-model-api
+  tag: v2
+  pullPolicy: Always
+replicaCount: 2
+service:
+  port: 8501
+  type: ClusterIP
+resources:
+    limits:
+        cpu: "1"
+        memory: "1Gi"
+    requests:
+        cpu: "0.5"
+        memory: "512Mi"
+serviceAccount:
+  create: true
+ingress:
+  enabled: false
+  className: nginx
+  hosts:
+    - host: tf-model.example.com
+      paths: ["/"]
+

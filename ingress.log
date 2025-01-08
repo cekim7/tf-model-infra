@@ -1,0 +1,29 @@
+-------------------------------------------------------------------------------
+NGINX Ingress controller
+  Release:       v1.11.2
+  Build:         46e76e5916813cfca2a9b0bfdc34b69a0000f6b9
+  Repository:    https://github.com/kubernetes/ingress-nginx
+  nginx version: nginx/1.25.5
+
+-------------------------------------------------------------------------------
+
+W0108 01:30:52.611940       7 client_config.go:659] Neither --kubeconfig nor --master was specified.  Using the inClusterConfig.  This might not work.
+I0108 01:30:52.612252       7 main.go:205] "Creating API client" host="https://10.96.0.1:443"
+W0108 01:31:23.710775       7 main.go:245] Initial connection to the Kubernetes API server was retried 1 times.
+I0108 01:31:23.710866       7 main.go:248] "Running in Kubernetes cluster" major="1" minor="31" git="v1.31.0" state="clean" commit="9edcffcde5595e8a5b1a35f88c421764e575afce" platform="linux/arm64"
+I0108 01:31:24.036937       7 main.go:101] "SSL fake certificate created" file="/etc/ingress-controller/ssl/default-fake-certificate.pem"
+I0108 01:31:24.206810       7 ssl.go:535] "loading tls certificate" path="/usr/local/certificates/cert" key="/usr/local/certificates/key"
+I0108 01:31:24.295538       7 nginx.go:271] "Starting NGINX Ingress controller"
+I0108 01:31:24.311507       7 event.go:377] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"ingress-nginx-controller", UID:"55824757-2350-404e-bc2b-74c9ab4809f2", APIVersion:"v1", ResourceVersion:"30330", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/ingress-nginx-controller
+I0108 01:31:24.390473       7 event.go:377] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"tcp-services", UID:"a91923b2-2add-4c55-ae76-37757265436e", APIVersion:"v1", ResourceVersion:"30331", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/tcp-services
+I0108 01:31:24.391309       7 event.go:377] Event(v1.ObjectReference{Kind:"ConfigMap", Namespace:"ingress-nginx", Name:"udp-services", UID:"186cc8ae-d0d3-4718-924c-f4e04069bbf8", APIVersion:"v1", ResourceVersion:"30332", FieldPath:""}): type: 'Normal' reason: 'CREATE' ConfigMap ingress-nginx/udp-services
+I0108 01:31:25.499567       7 nginx.go:317] "Starting NGINX process"
+I0108 01:31:25.500423       7 leaderelection.go:250] attempting to acquire leader lease ingress-nginx/ingress-nginx-leader...
+I0108 01:31:25.501017       7 nginx.go:337] "Starting validation webhook" address=":8443" certPath="/usr/local/certificates/cert" keyPath="/usr/local/certificates/key"
+I0108 01:31:25.502180       7 controller.go:193] "Configuration changes detected, backend reload required"
+I0108 01:31:25.583544       7 leaderelection.go:260] successfully acquired lease ingress-nginx/ingress-nginx-leader
+I0108 01:31:25.584286       7 status.go:85] "New leader elected" identity="ingress-nginx-controller-bc57996ff-c52tl"
+I0108 01:31:25.604704       7 status.go:219] "POD is not ready" pod="ingress-nginx/ingress-nginx-controller-bc57996ff-c52tl" node="minikube"
+I0108 01:31:26.010947       7 controller.go:213] "Backend successfully reloaded"
+I0108 01:31:26.011265       7 controller.go:224] "Initial sync, sleeping for 1 second"
+I0108 01:31:26.012926       7 event.go:377] Event(v1.ObjectReference{Kind:"Pod", Namespace:"ingress-nginx", Name:"ingress-nginx-controller-bc57996ff-c52tl", UID:"b3df3098-10c2-42b9-872d-bfec932088ef", APIVersion:"v1", ResourceVersion:"35535", FieldPath:""}): type: 'Normal' reason: 'RELOAD' NGINX reload triggered due to a change in configuration
